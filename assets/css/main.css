@@ -12,6 +12,7 @@
     background: aliceblue;
     padding: 18px 18px 30px;
     border-top: 2px solid black;
+    position: relative;
 }
 
 #fll_dealer_list p, #dealer_info_selected p{
@@ -32,18 +33,33 @@
     cursor: pointer;
 }
 
+#enter_zipcode, #enter_zipcode_btn{
+    float: right;
+}
+
 #fll_dealer_list .right-info{
     float: right;
     display: flex;
     align-items: center;
+    position: absolute;
+    top:16px;
+    right: 10px;
 }
 
 img.certified_img{
     display: inline-block !important;
+    margin-right: 5px;
 }
 
 .label_dealer_radio{
     margin-right: 30px;
+}
+
+.right-info label{
+    margin-left: 10px !important;
+}
+.certified_badge{
+    display: flex;
 }
 
 /** Progress with steps */

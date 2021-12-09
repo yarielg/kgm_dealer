@@ -143,13 +143,14 @@
                                 x++;
                             }
 
-                            var certified_markup = locator.certified ? '<img class="certified_img" src="'+parameters.plugin_url+'/assets/images/certified.png" alt=""><span><strong> CERTIFIED KGM DEALER </strong></span>' : '';
+                            var certified_markup = locator.certified ? '<div class="certified_badge"><img class="certified_img" src="'+parameters.plugin_url+'/assets/images/certified.png" alt=""><span><strong> CERTIFIED KGM DEALER </strong></span></div>' : '';
 
                             $('#fll_dealer_list').append('<div class="dealer-list-item"><p><strong>'+ locator.name +'</strong></p>' +
                                 '<p><strong>'+ locator.address +'</strong></p>' +
                                 '<p><strong>' + locator.city + ', ' + locator.state + ' ' + locator.zip + '</strong></p><br>' +
                                 '<p><strong>'+locator.phone+'</strong></p>' +
-                                '<strong>DISTANCE: '+ locator.distance +'MI</strong><div class="right-info">'+certified_markup+'<input data-dealer="'+window.btoa(JSON.stringify(locator))+'" type="radio" name="dealer_selection" required class="continue btn-step radio-dealer btn-dealer-'+locator.id+'" id="btn-dealer-'+locator.id+'"><label for="btn-dealer-'+locator.id+'">Select & Continue</label></div></div>');
+                                '<p><strong>DISTANCE: '+ locator.distance +'MI</strong></p>' +
+                                ''+certified_markup+'<div class="right-info"><input data-dealer="'+window.btoa(JSON.stringify(locator))+'" type="radio" name="dealer_selection" required class="continue btn-step radio-dealer btn-dealer-'+locator.id+'" id="btn-dealer-'+locator.id+'"><label for="btn-dealer-'+locator.id+'">Select & Continue</label></div></div>');
                         });
                     }
 
