@@ -33,9 +33,13 @@
     cursor: pointer;
 }
 
-#enter_zipcode, #enter_zipcode_btn{
+#zipcode-fields{
     float: right;
 }
+
+#enter_zipcode{
+    width: 180px;
+ }
 
 #fll_dealer_list .right-info{
     float: right;
