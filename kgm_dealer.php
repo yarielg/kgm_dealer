@@ -4,9 +4,9 @@
 * @package yariko
 
 
-Plugin Name:  Kgm Dealers
+Plugin Name:  Kgm Dealers Step Checkout
 Plugin URI:   https://thomasgbennett.com/
-Description:  This plugin implement the fll deasle logic
+Description:  This plugin create a 4-step checkout depending on some conditions
 Version:      1.0.0
 Author:       Bennet Group (Yariel Gordillo)
 Author URI:   https://thomasgbennett.com/
