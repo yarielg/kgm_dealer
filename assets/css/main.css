@@ -66,6 +66,10 @@ img.certified_img{
     display: flex;
 }
 
+.dealer_info_order {
+    width: 100% !important;
+}
+
 /** Progress with steps */
 
 ol.progtrckr {

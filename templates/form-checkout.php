@@ -66,6 +66,9 @@ include  KGM_PLUGIN_PATH . '/templates/partials/step_bar.php';
                     <input class="dealer_selection_radio enter" id="enter" type="radio" name="select_type_dealer_selection">
                     <label class="label_dealer_radio" for="enter">Enter Your Dealer</label>
                 </div>-->
+
+                <!-- Adding dealer if field -->
+                <input type="hidden" name="dealer_ffl_id" id="dealer_ffl_id" value="">
                 <br><br>
                 <div class="enter_your_dealer" style="display: none">
                     <?php include KGM_PLUGIN_PATH . '/templates/partials/enter_dealer_info.php' ?>

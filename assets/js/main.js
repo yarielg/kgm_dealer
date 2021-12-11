@@ -33,7 +33,7 @@
                 streetViewControl: false,
                 style : [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#343e56"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#c3ccda"}]},{"featureType":"landscape","elementType":"labels.icon","stylers":[{"color":"#788aa3"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"color":"#343e56"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#c3ccda"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"color":"#788aa3"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#343e56"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#aeb9c8"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#343e56"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels.icon","stylers":[{"color":"#788aa3"}]},{"featureType":"transit","elementType":"labels.text.fill","stylers":[{"color":"#343e56"}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#788aa3"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"simplified"}]}],
                 icons: {
-                    house: "https://uploads-ssl.webflow.com/5ea979f1dcf900bb408004a2/5ebbe95142f17b488b2fb3ff_Pin.svg",
+                    house: parameters.plugin_url + '/assets/images/certified.png',
                 }
             });
 
@@ -122,7 +122,7 @@
                                     animation: google.maps.Animation.DROP,
                                     map: map,
                                     icon: {
-                                        url: "https://uploads-ssl.webflow.com/5ea979f1dcf900bb408004a2/5ebbe95142f17b488b2fb3ff_Pin.svg",
+                                        url: parameters.plugin_url + '/assets/images/certified.png',
                                         scaledSize: new google.maps.Size(38, 38),
                                         origin: new google.maps.Point(0, 0),
                                         anchor: new google.maps.Point(14.5, 38)

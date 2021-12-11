@@ -93,7 +93,10 @@
                         '    <p><strong>'+dealer.address+'</strong></p>\n' +
                         '    <p><strong>'+ dealer.city + ', ' + dealer.state + ' ' + dealer.zip + '</strong></p>\n' +
                         '    <p><strong><a href="tel:'+dealer.phone+'">'+dealer.phone+'</a></strong></p>');
+
+                    $('#dealer_ffl_id').val(dealer.id)
                 }
+
 
                 if($(this).hasClass('go_back')){
                     self.changeStep(-1)
