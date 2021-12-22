@@ -6,7 +6,7 @@
 
 Plugin Name:  Kgm Dealers Step Checkout.
 Plugin URI:   https://thomasgbennett.com/
-Description:  This plugin create a 4-step checkout depending if the product on cart required a FFL license. XXX
+Description:  This plugin create a 4-step checkout depending if the product on cart required a FFL license.
 Version:      1.0.0
 Author:       Bennet Group (Yariel Gordillo)
 Author URI:   https://thomasgbennett.com/

@@ -11,14 +11,33 @@
         init: function () {
             var self = this;
 
+            self.default();
             self.displaySteps();
             self.changeDirection();
+            self.populateBillingInfo();
         },
         displaySteps(){
             $('.step').attr("style", "display: none !important");
             $('.step-' + window.step).attr("style", "display: block !important");
+            var $billing = $('.billing-4-checkout');
+            var $shipping = $('.shipping-4-checkout');
+            var checkout_step = $('.billing-4-checkout').data('hide');
+
             if(window.step === 4){
                 $('.step-4').attr("style", "display: inline !important");
+            }
+
+            //Hiding/showing billing and shipping
+            //Show only on step 1
+
+            $shipping.css('display','none');
+            $billing.css('display','block');
+            if(window.step == checkout_step ){
+                $shipping.css('display','block');
+                $billing.css('display','none');
+                $('#place_an_order').css('display','inline');
+            }else{
+                $('#place_an_order').css('display','none');
             }
 
             var go_back_btn  = $('.go_back').filter('.footer');
@@ -46,6 +65,25 @@
            // window.scrollTo({ top: 0, behavior: 'smooth' });
             $("html, body").animate({ scrollTop: 0 }, "slow");
 
+        },
+        displayHeadings(){
+            var $heading_step_checkout = $('#heading_step_checkout');
+            var steps = $heading_step_checkout.data('steps');
+            $heading_step_checkout.text('');
+            switch (window.step) {
+                case 1:
+                    $heading_step_checkout.text('STEP 1: SHIPPING ADDRESS');
+                    break
+                case 2:
+                    $heading_step_checkout.text( steps == 2 ? 'STEP 2: PAYMENT' : 'STEP 2: CHOOSE FFL');
+                    break
+                case 3:
+                    $heading_step_checkout.text('STEP 3: NFA AGREEMENTS');
+                    break
+                case 4:
+                    $heading_step_checkout.text('STEP 4: PAYMENT');
+                    break
+            }
         },
         checkErrorsShippingFields(){
             return $('#billing_first_name').val().length === 0 ||
@@ -88,7 +126,7 @@
                     var dealer = $(this).data('dealer');
                     dealer = JSON.parse(window.atob(dealer));
                     $('#dealer_info_selected').empty();
-                    $('#dealer_info_selected').append('<h4><strong>SELECTED FFL</strong></h4>\n' +
+                    $('#dealer_info_selected').append('<h4 class="billing_heading"><strong>SELECTED FFL</strong></h4>\n' +
                         '    <p><strong>'+dealer.name+'</strong></p>\n' +
                         '    <p><strong>'+dealer.address+'</strong></p>\n' +
                         '    <p><strong>'+ dealer.city + ', ' + dealer.state + ' ' + dealer.zip + '</strong></p>\n' +
@@ -106,6 +144,8 @@
                 }
                 self.displaySteps();
                 self.stepBarUpdate();
+                self.displayHeadings();
+                self.populateBillingInfo();
             })
 
         },
@@ -122,6 +162,41 @@
                 }
                 current++;
             });
+        },
+        populateBillingInfo(){
+            $('.billing_info_fields').empty();
+            $('.billing_info_fields').html('<h4>BILLING ADDRESS</h4>' +
+                '<p>'+$('#billing_first_name').val()+' ' + $('#billing_last_name').val() +'</p>' +
+                '<p>'+$('#billing_address_1').val()+'</p>' +
+                '<p>'+$('#billing_city').val()+', ' + $('#billing_state').val() +' ' + $('#billing_postcode').val() + '</p>' +
+                '<p>'+ $('#billing_phone').val() +'</p>'
+            );
+        },
+        default(){
+            $('#ship-to-different-address-checkbox').attr('checked',false);
+            setTimeout(function(){
+                $('#billing_city_field').addClass('form-row-first');
+                $('#billing_city_field').removeClass('form-row-wide');
+
+                $('#billing_state_field').addClass('form-row-last');
+                $('#billing_state_field').removeClass('form-row-wide');
+
+            },2000);
+
+            $('#place_an_order').on('click',function(){
+                $('#place_order').trigger('click');
+                //$('#place_order').click();
+                //$('#regForm').submit();
+            });
+
+            $('#ship-to-different-address-checkbox').click(function(){
+                    if($(this).checked){
+                        $('#billing_info_fields').css('display','none');
+                    }else{
+                        $('#billing_info_fields').css('display','inline');
+                    }
+            });
+
         }
     }
 

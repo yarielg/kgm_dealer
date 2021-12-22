@@ -110,3 +110,161 @@ ol.progtrckr li.progtrckr-todo:before {
     bottom: -1.6em;
 }
 
+/* CHECKOUT FIELDS*/
+#regForm{
+    font-family: "Roboto Condensed", Sans-serif !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+#regForm input[type='text'], #regForm input[type='email']{
+    background: #d0cccc !important;
+    border: none !important;
+    height: 50px !important;
+}
+
+#regForm label{
+    font-weight: bold !important;
+}
+
+#billing_company_field, .woocommerce-billing-fields h3,#billing_country_field{
+    display: none !important;
+}
+
+#heading_step_checkout{
+    color:black;
+}
+
+span.select2-selection{
+    height: 50px !important;
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+    background: #d0cccc !important;
+}
+
+#heading_step_checkout .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top:13px !important;
+}
+
+.icon_triangle{
+    width: 15px !important;
+    margin-left: 14px !important;
+}
+
+button.continue{
+    margin-left: 20px !important;
+}
+
+button.continue,button.go_back{
+    font-size: 1.5rem !important;
+}
+
+#go_back{
+    background: transparent !important;
+    color: #004072; !important;
+    width: 200px;
+}
+
+.continue-label{
+     font-family: "Roboto Condensed", Sans-serif;
+     font-size: 15px;
+     font-weight: bold !important;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     color: #004072 !important;
+     background-color: white !important;
+     border-style: solid;
+     border-width: 1px;
+     border-radius: 0px;
+     padding: 12px 20px;
+     width: 150px !important;
+     text-align:center !important;
+}
+
+.continue-label:hover, .dealer-list-item input[type="radio"]:checked+label{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white !important;
+    background-color: #004072 !important;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #004072;
+    border-radius: 0px;
+    padding: 12px 20px;
+    width: 150px !important;
+    font-weight:bold;
+
+}
+
+.right-info input[type="radio"]{
+    display: none !important;
+}
+
+.woocommerce-shipping-fields .woocommerce-input-wrapper{
+    width:100% !important;
+}
+
+#order_comments_field,#place_order{
+    display: none !important;
+}
+
+.billing_info_fields p{
+    margin-bottom: 0 !important;
+    font-weight: bold !important;
+    font-size: 15px;
+}
+
+.billing_info_fields h4{
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
+
+#dealer_info_selected{
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+
+#dealer_info_selected p{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#dealer_info_selected h4{
+    font-weight: bold !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#fll_dealer_list{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#ffl_dealer_list .dealer-list-item p{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.certified_badge{
+    padding-bottom: 20px !important;
+    position: relative !important;
+    top: -15px !important;
+    float: right !important;
+}
+
+img.certified_img{
+    width:28px !important;
+    height:28px !important;
+}
+
+label.terms{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+#order_review{
+    width: 80%;
+    float: right;
+}

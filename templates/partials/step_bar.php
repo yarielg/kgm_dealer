@@ -6,6 +6,7 @@
         <li class="">NFA AGREEMENTS</li>
         <li class="">PAYMENT</li>
     </ol>
+
     <?php
 }else{
     ?>
@@ -15,3 +16,7 @@
     </ol>
     <?php
 }
+
+?>
+<br>
+<h5 id="heading_step_checkout" data-steps="<?php echo $flag_require_dealer ? 4 : 2 ?>">STEP 1: SHIPPING ADDRESS</h5>

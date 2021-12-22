@@ -17,9 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_ajax() ) {
-    do_action( 'woocommerce_review_order_before_payment' );
-}
+
 $flag_require_dealer = false;
 
 foreach (WC()->cart->get_cart() as $car_item){
@@ -28,7 +26,8 @@ foreach (WC()->cart->get_cart() as $car_item){
     }
 }
 ?>
-    <div id="payment" class="woocommerce-checkout-payment col2-set step <?= $flag_require_dealer ? 'step-4' : 'step-2' ?>" style="display: none">
+</div>
+    <div id="payment" class="woocommerce-checkout-payment col-md-6 col2-set step <?= $flag_require_dealer ? 'step-4' : 'step-2' ?>" style="display: none">
         <?php if ( WC()->cart->needs_payment() ) : ?>
             <ul class="wc_payment_methods payment_methods methods">
                 <?php
@@ -61,6 +60,9 @@ foreach (WC()->cart->get_cart() as $car_item){
 
             <?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
         </div>
+    </div>
+    <div class="col-md-6">
+
     </div>
     </div>
 <?php

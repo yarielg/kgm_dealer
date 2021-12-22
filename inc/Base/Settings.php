@@ -27,6 +27,51 @@ class Settings{
          * Display dealer info on admin order single
          */
         add_action( 'woocommerce_admin_order_data_after_order_details', array($this, 'kgm_show_dealer_info_on_single_order_admin') );
+
+        /**
+         * Reorder the billing fields on checkout
+         */
+
+        add_filter( 'woocommerce_checkout_fields', array($this,'reorder_billing_fields'),100 );
+
+        /**
+         * Adding div section to populate billing info right after shipping fields
+         */
+        add_action( 'woocommerce_before_order_notes', array($this,'add_div_after_checkout_shipping_field'),100 );
+
+        /**
+         * Change text withing app
+         */
+        //add_filter('gettext', array($this,'custom_strings_translation'), 20, 3);
+
+    }
+
+    /*function custom_strings_translation( $translated_text, $text, $domain ) {
+
+        switch ( $translated_text ) {
+            case 'Ship to a different address?' :
+                $translated_text =  __( 'Ship to a different address', '__x__' );
+                break;
+        }
+
+        return $translated_text;
+    }*/
+
+    function add_div_after_checkout_shipping_field(){
+        echo "<div class='billing_info_fields'></div>";
+    }
+
+    function reorder_billing_fields( $checkout_fields ) {
+
+        $checkout_fields['billing']['billing_email']['priority'] = 4;
+        $checkout_fields['billing']['billing_postcode']['priority'] = 61;
+       // $checkout_fields['billing']['billing_postcode']['class'] = array('form-row-first');
+        $checkout_fields['billing']['billing_city']['priority'] = 63;
+       // $checkout_fields['billing']['billing_city']['class'] = array('form-row-last');
+       // $checkout_fields['billing']['billing_state']['class'] = array('form-row-first');
+       // $checkout_fields['billing']['billing_phone']['class'] = array('form-row-last');
+       // $checkout_fields['billing']['billing_address_2']['placeholder'] = 'ADDRESS OPTIONAL';
+        return $checkout_fields;
     }
 
     function kgm_locate_template( $template, $template_name, $template_path ) {

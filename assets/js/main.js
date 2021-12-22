@@ -114,7 +114,7 @@
                                                 '<p>Distance: <strong>'+Math.round(distance)+'</strong> miles</p>' +
                                                 '<p>'+locator.address+' ' + locator.city + ', '+locator.state+'</p>' +
                                                 '<p><a href="tel:'+locator.phone+'">'+locator.phone+'</a> <a href="https://www.google.com/maps/search/?api=1&query='+ locator.address + '+' + locator.zip +'" target="_blank">Directions</a></p>' +
-                                                '<p><label for="btn-dealer-'+locator.id+'">Select & Continue</label></p>'+
+                                                '<p><label  for="btn-dealer-'+locator.id+'">SELECT DEALER</label></p>'+
                                         '</div>' +
                                     '</div>');
                                 marker = new google.maps.Marker({
@@ -150,7 +150,7 @@
                                 '<p><strong>' + locator.city + ', ' + locator.state + ' ' + locator.zip + '</strong></p><br>' +
                                 '<p><strong>'+locator.phone+'</strong></p>' +
                                 '<p><strong>DISTANCE: '+ locator.distance +'MI</strong></p>' +
-                                ''+certified_markup+'<div class="right-info"><input data-dealer="'+window.btoa(JSON.stringify(locator))+'" type="radio" name="dealer_selection" required class="continue btn-step radio-dealer btn-dealer-'+locator.id+'" id="btn-dealer-'+locator.id+'"><label for="btn-dealer-'+locator.id+'">Select & Continue</label></div></div>');
+                                ''+certified_markup+'<div class="right-info"><input data-dealer="'+window.btoa(JSON.stringify(locator))+'" type="radio" name="dealer_selection" required class="continue btn-step radio-dealer btn-dealer-'+locator.id+'" id="btn-dealer-'+locator.id+'"><label class="continue-label" for="btn-dealer-'+locator.id+'">Continue</label></div></div>');
                         });
                     }
 
