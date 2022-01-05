@@ -276,5 +276,13 @@ label.terms{
 }
 
 #enter_zipcode_btn{
-    margin-left: 9px;
+    margin-left: 10px;
+}
+
+#place_an_order, #go_back, .footer.continue{
+    margin-bottom: 100px;
+}
+
+#dealer_info_selected strong{
+    font-size: 18px;
 }

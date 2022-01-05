@@ -137,4 +137,7 @@ include  KGM_PLUGIN_PATH . '/templates/partials/step_bar.php';
 <button class="btn-step footer continue">Continue <img class="icon_triangle" src="<?php echo KGM_PLUGIN_URL . 'assets/images/triangle.png' ?>" alt=""></button>
 <button style="display: none" class="continue" id="place_an_order">COMPLETE ORDER <img class="icon_triangle" src="<?php echo KGM_PLUGIN_URL . 'assets/images/triangle.png' ?>" alt=""></button>
 
+
+</div>
+
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
