@@ -123,7 +123,7 @@
                                     map: map,
                                     icon: {
                                         url: parameters.plugin_url + '/assets/images/certified.png',
-                                        scaledSize: new google.maps.Size(38, 38),
+                                        scaledSize: new google.maps.Size(24, 24),
                                         origin: new google.maps.Point(0, 0),
                                         anchor: new google.maps.Point(14.5, 38)
                                     },
