@@ -286,3 +286,26 @@ label.terms{
 #dealer_info_selected strong{
     font-size: 18px;
 }
+
+
+
+
+@media (min-width: 768px) {
+    #payment{
+        position: relative !important;
+        top: -150px !important;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+    #payment{
+        position: relative !important;
+        top: -150px !important;
+    }
+
+    .top-images, #zipcode-fields{
+        display: none !important;
+    }
+}

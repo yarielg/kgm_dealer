@@ -36,7 +36,7 @@ foreach (WC()->cart->get_cart() as $car_item){
 }
 ?>
 <div class="row">
-    <div class="col-12 d-flex justify-content-between mb-4">
+    <div class="col-12 d-flex justify-content-between mb-4 top-images">
         <img src="<?php echo KGM_PLUGIN_URL . 'assets/images/logo.png' ?>" alt="">
         <img src="<?php echo KGM_PLUGIN_URL . 'assets/images/secure.png' ?>" alt="">
     </div>
