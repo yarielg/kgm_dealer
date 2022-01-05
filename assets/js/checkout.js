@@ -155,7 +155,6 @@
             $('ol.progtrckr li').each(function(step){
                 if(current < window.step){
                     $(this).addClass(done_class);
-                    $(this).css('text-decoration', 'line-through');
                 }else{
                     $(this).removeClass(done_class);
                     $(this).css('text-decoration', 'none');

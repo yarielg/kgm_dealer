@@ -39,6 +39,8 @@
 
 #enter_zipcode{
     width: 180px;
+    height: 47px !important;
+    border:0 !important;
  }
 
 #fll_dealer_list .right-info{
