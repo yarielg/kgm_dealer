@@ -14,6 +14,7 @@
             var map = null;
 
             self.preventingPlaceOrder();
+            self.focusOnMarker(map);
         },
         initMap(){
             var self = this;
@@ -21,8 +22,6 @@
                 window.ffl_lat = 37.2755586;
                 window.ffl_lon = -104.6573965;
             }
-
-            console.log(document.getElementById("map_id_wrapper"))
 
             self.map = new google.maps.Map(document.getElementById("map_id_wrapper"), {
                 center: { lat: window.ffl_lat, lng: window.ffl_lon },
@@ -145,7 +144,7 @@
 
                             var certified_markup = locator.certified ? '<div class="certified_badge"><img class="certified_img" src="'+parameters.plugin_url+'/assets/images/certified.png" alt=""><span><strong> CERTIFIED KGM DEALER </strong></span></div>' : '';
 
-                            $('#fll_dealer_list').append('<div class="dealer-list-item"><p><strong>'+ locator.name +'</strong></p>' +
+                            $('#fll_dealer_list').append('<div data-lon="'+locator.lon+'" data-lat="'+locator.lat+'" class="dealer-list-item"><p><strong>'+ locator.name +'</strong></p>' +
                                 '<p><strong>'+ locator.address +'</strong></p>' +
                                 '<p><strong>' + locator.city + ', ' + locator.state + ' ' + locator.zip + '</strong></p><br>' +
                                 '<p><strong>'+locator.phone+'</strong></p>' +
@@ -218,7 +217,6 @@
                     if (status == google.maps.GeocoderStatus.OK) {
                         window.ffl_lat = results[0].geometry.location.lat();
                         window.ffl_lon = results[0].geometry.location.lng();
-                        console.log('Yeah', results[0].geometry.location.lat(), window.ffl_lat)
                         self.initMap();
                     } else {
                         alert("Request failed.")
@@ -405,6 +403,18 @@
                 }
 
             });
+        },
+        focusOnMarker(){
+
+            console.log('asdasd');
+            var self = this;
+
+            $('#fll_dealer_list').on("click", ".dealer-list-item", function(){
+                console.log($(this).data('lat'),$(this).data('lon'));
+                window.ffl_lat = $(this).data('lat');
+                window.ffl_lon = $(this).data('lon');
+                self.initMap();
+            });
         }
     }
 
@@ -415,6 +425,7 @@
         window.Kgm.MapHandler.initAddressAuto();
         window.Kgm.MapHandler.toggleMap();
         window.Kgm.MapHandler.processAddDealer();
+        window.Kgm.MapHandler.focusOnMarker();
     });
 
 })(window, window.jQuery);
