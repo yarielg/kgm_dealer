@@ -298,6 +298,10 @@ label.terms{
 
 }
 
+.dealer-list-item{
+    cursor: pointer;
+}
+
 
 @media (max-width: 767px) {
     #payment{

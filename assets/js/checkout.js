@@ -72,7 +72,7 @@
             $heading_step_checkout.text('');
             switch (window.step) {
                 case 1:
-                    $heading_step_checkout.text('STEP 1: SHIPPING ADDRESS');
+                    $heading_step_checkout.text('STEP 1: BILLING ADDRESS');
                     break
                 case 2:
                     $heading_step_checkout.text( steps == 2 ? 'STEP 2: PAYMENT' : 'STEP 2: CHOOSE FFL');
