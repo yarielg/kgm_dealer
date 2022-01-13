@@ -287,7 +287,9 @@ label.terms{
     font-size: 18px;
 }
 
-
+.progtrckr-done{
+    cursor: pointer;
+}
 
 
 @media (min-width: 768px) {

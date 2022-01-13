@@ -196,11 +196,19 @@
                     }
             });
 
+
+
         }
     }
 
     $(document).ready(function() {
         window.Kgm = window.Kgm || {};
         window.Kgm.CheckoutHandler = new CheckoutHandler();
+        $('.progtrckr').on('click','.progtrckr-done', function(){
+            window.step = $(this).data('step');
+            window.Kgm.CheckoutHandler.displaySteps();
+            window.Kgm.CheckoutHandler.stepBarUpdate();
+            window.Kgm.CheckoutHandler.displayHeadings();
+        });
     });
 })(window, window.jQuery);

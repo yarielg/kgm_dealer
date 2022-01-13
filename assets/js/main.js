@@ -298,7 +298,6 @@
                     if (status == google.maps.GeocoderStatus.OK) {
 
                         if (results[0]) {
-                            console.log(results[0]);
                             var address_obj = window.Kgm.MapHandler.addressComponent(results[0].address_components);
                             var address = address_obj.address;
                             var zip = address_obj.zip;
@@ -406,11 +405,9 @@
         },
         focusOnMarker(){
 
-            console.log('asdasd');
             var self = this;
 
             $('#fll_dealer_list').on("click", ".dealer-list-item", function(){
-                console.log($(this).data('lat'),$(this).data('lon'));
                 window.ffl_lat = $(this).data('lat');
                 window.ffl_lon = $(this).data('lon');
                 self.initMap();
