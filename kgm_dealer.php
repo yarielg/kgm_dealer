@@ -4,7 +4,7 @@
 * @package yariko
 
 
-Plugin Name:  Kgm Dealers Step Checkout. ...
+Plugin Name:  Kgm Dealers Step Checkout.
 Plugin URI:   https://thomasgbennett.com/
 Description:  This plugin create a 4-step checkout depending if the product on cart required a FFL license.
 Version:      1.0.0
