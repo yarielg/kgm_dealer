@@ -34,7 +34,10 @@ class Enqueue{
         wp_enqueue_style('main-css', KGM_PLUGIN_URL . '/assets/css/main.css');
         wp_enqueue_style('bootstrap-css',  'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css');
         wp_enqueue_script('main-js', KGM_PLUGIN_URL  . '/assets/js/main.js' ,array('jquery'),'1.0', false);
-        wp_enqueue_script('map-js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBMwYpxeHMJ249d2oWOfcFwyxe5kcAAcB0&callback=window.Kgm.MapHandler.initMap&v=weekly&libraries=places' ,array(),'1.0', true);
+
+        $map_key = 'https://maps.googleapis.com/maps/api/js?key=' . get_field('google_map_key', 'option') . '&callback=window.Kgm.MapHandler.initMap&v=weekly&libraries=places';
+
+        wp_enqueue_script('map-js', $map_key,array(),'1.0', true);
 
 
         wp_localize_script( 'main-js', 'parameters', ['ajax_url'=> admin_url('admin-ajax.php'), 'plugin_url' => KGM_PLUGIN_URL]);
