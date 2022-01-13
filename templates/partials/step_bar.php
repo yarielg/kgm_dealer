@@ -11,7 +11,7 @@
 }else{
     ?>
     <ol class="progtrckr" data-progtrckr-steps="2">
-        <li class="">SHIPPING</li>
+        <li class="">BILLING</li>
         <li class="">PAYMENT</li>
     </ol>
     <?php
