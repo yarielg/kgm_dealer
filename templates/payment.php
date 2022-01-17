@@ -27,7 +27,7 @@ foreach (WC()->cart->get_cart() as $car_item){
 }
 ?>
 </div>
-    <div id="payment" class="woocommerce-checkout-payment col-md-6 col2-set step <?= $flag_require_dealer ? 'step-4' : 'step-2' ?>" style="display: none">
+    <div id="payment" class="woocommerce-checkout-payment col-md-6 col2-set step <?= $flag_require_dealer ? 'step-4' : 'step-2' ?>" style="display: none;top: -150px ">
         <?php if ( WC()->cart->needs_payment() ) : ?>
             <ul class="wc_payment_methods payment_methods methods">
                 <?php
