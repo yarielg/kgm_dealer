@@ -213,10 +213,10 @@
 
         $('#ship-to-different-address-checkbox').on('change', function(){
             if($(this).is(':checked')){
+                $('#payment').css('top','0');
+            }else{
                 $('#payment').css('position','relative');
                 $('#payment').css('top','-150px');
-            }else{
-                $('#payment').css('top','0');
             }
         });
     });
