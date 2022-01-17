@@ -24,7 +24,7 @@
             var checkout_step = $('.billing-4-checkout').data('hide');
 
             if(window.step === 4){
-                $('.step-4').attr("style", "display: inline !important");
+                $('.step-4').attr("style", "display: inline !important; top: -150px");
             }
 
             //Hiding/showing billing and shipping
@@ -215,7 +215,6 @@
             if($(this).is(':checked')){
                 $('#payment').css('top','0');
             }else{
-                $('#payment').css('position','relative');
                 $('#payment').css('top','-150px');
             }
         });
