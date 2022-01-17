@@ -25,7 +25,7 @@
 
             if(window.step === 4){
                 $('.step-4').attr("style", "display: inline !important");
-                $('#payment').attr("style", "top: inline !important");
+                $('#payment').css("top", "-150px");
             }
 
             //Hiding/showing billing and shipping
