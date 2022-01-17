@@ -293,10 +293,10 @@ label.terms{
 
 
 @media (min-width: 768px) {
-    #payment{
+    /*#payment{
         position: relative !important;
         top: -150px !important;
-    }
+    }*/
 
 }
 
@@ -304,12 +304,11 @@ label.terms{
     cursor: pointer;
 }
 
-
 @media (max-width: 767px) {
-    #payment{
+    /*#payment{
         position: relative !important;
         top: -150px !important;
-    }
+    }*/
 
     .top-images, #zipcode-fields{
         display: none !important;
