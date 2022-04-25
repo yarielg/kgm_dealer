@@ -64,7 +64,9 @@
             //Scroll  to top
            // $(window).scrollTop(0);
            // window.scrollTo({ top: 0, behavior: 'smooth' });
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            var $scrollTo = $('.progtrckr');
+            var $container = $("html,body");
+            $("html, body").animate({scrollTop: $scrollTo.offset().top - $container.offset().top - 50 }, "slow");
 
         },
         displayHeadings(){
