@@ -1,5 +1,6 @@
 #map_id_wrapper{
     height: 500px !important;
+    width: 100% !important;
 }
 
 #fll_dealer_list{
@@ -292,11 +293,49 @@ label.terms{
 }
 
 
-@media (min-width: 768px) {
+@media (max-width: 1400px) {
     /*#payment{
         position: relative !important;
         top: -150px !important;
     }*/
+    #get_location_btn, #enter_zipcode_btn{
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    #enter_zipcode{
+        font-size: 14px;
+        width: 100px;
+        height: 40px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #zipcode-fields{
+        float: left;
+    }
+
+}
+
+@media (max-width: 759px) {
+    /*#payment{
+        position: relative !important;
+        top: -150px !important;
+    }*/
+    .top-images img{
+        height: 25px !important;
+    }
+
+    .continue-label{
+        font-size: 10px !important;
+        width: 100px !important;
+        padding: 10px !important;
+    }
+
+    .certified_badge{
+        position: static !important;
+        float: left !important;
+    }
 
 }
 
