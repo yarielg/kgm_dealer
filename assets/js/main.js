@@ -109,60 +109,65 @@
                             }
                         }
 
+                        var stop = 5;
+                        var count = 0;
+
                         ffl_locators.forEach((locator) => {
+                            if(stop > count){
+                                var latitude = parseFloat(locator.lat);
+                                var longitude = parseFloat(locator.lon);
 
-                            var latitude = parseFloat(locator.lat);
-                            var longitude = parseFloat(locator.lon);
-
-                            if ((latitude && longitude) && (latitude !== 0 && longitude !== 0)) {
-                                infoWindows.push('<div  class="infowindow w-inline-block">' +
-                                    '<div class="results-image-wrap">' +
+                                if ((latitude && longitude) && (latitude !== 0 && longitude !== 0)) {
+                                    infoWindows.push('<div  class="infowindow w-inline-block">' +
+                                        '<div class="results-image-wrap">' +
                                         '</div>' +
-                                            '<div class="map-card-text-wrap">' +
-                                                '<h4 class="dark-blue-text no-margin"><strong>'+locator.name+'</strong></h4>' +
-                                                '<p>Distance: <strong>'+Math.round(distance)+'</strong> miles</p>' +
-                                                '<p>'+locator.address+' ' + locator.city + ', '+locator.state+'</p>' +
-                                                '<p><a href="tel:'+locator.phone+'">'+locator.phone+'</a> <a href="https://www.google.com/maps/search/?api=1&query='+ locator.address + '+' + locator.zip +'" target="_blank">Directions</a></p>' +
-                                                '<p><label  for="btn-dealer-'+locator.id+'">SELECT DEALER</label></p>'+
+                                        '<div class="map-card-text-wrap">' +
+                                        '<h4 class="dark-blue-text no-margin"><strong>'+locator.name+'</strong></h4>' +
+                                        '<p>Distance: <strong>'+Math.round(distance)+'</strong> miles</p>' +
+                                        '<p>'+locator.address+' ' + locator.city + ', '+locator.state+'</p>' +
+                                        '<p><a href="tel:'+locator.phone+'">'+locator.phone+'</a> <a href="https://www.google.com/maps/search/?api=1&query='+ locator.address + '+' + locator.zip +'" target="_blank">Directions</a></p>' +
+                                        '<p><label  for="btn-dealer-'+locator.id+'">SELECT DEALER</label></p>'+
                                         '</div>' +
-                                    '</div>');
-                                marker = new google.maps.Marker({
-                                    position: new google.maps.LatLng(latitude, longitude),
-                                    animation: google.maps.Animation.DROP,
-                                    map: map,
-                                    icon: {
-                                        url: parameters.plugin_url + '/assets/images/certified.png',
-                                        scaledSize: new google.maps.Size(24, 24),
-                                        origin: new google.maps.Point(0, 0),
-                                        anchor: new google.maps.Point(14.5, 38)
-                                    },
-                                    title: 'asdasdasd'
-                                });
+                                        '</div>');
+                                    marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(latitude, longitude),
+                                        animation: google.maps.Animation.DROP,
+                                        map: map,
+                                        icon: {
+                                            url: parameters.plugin_url + '/assets/images/certified.png',
+                                            scaledSize: new google.maps.Size(24, 24),
+                                            origin: new google.maps.Point(0, 0),
+                                            anchor: new google.maps.Point(14.5, 38)
+                                        },
+                                        title: 'asdasdasd'
+                                    });
 
-                                google.maps.event.addListener(marker, 'click', (function(marker, x) {
-                                    return function() {
-                                        //map.setCenter(marker.getPosition());
-                                        infowindow.setContent(infoWindows[x]);
-                                        infowindow.open(map, marker);
-                                    }
-                                })(marker, x));
+                                    google.maps.event.addListener(marker, 'click', (function(marker, x) {
+                                        return function() {
+                                            //map.setCenter(marker.getPosition());
+                                            infowindow.setContent(infoWindows[x]);
+                                            infowindow.open(map, marker);
+                                        }
+                                    })(marker, x));
 
-                                markers.push(marker);
-                                bounds.extend(marker.position);
-                                x++;
+                                    markers.push(marker);
+                                    bounds.extend(marker.position);
+                                    x++;
+                                }
+
+                                var certified_markup = locator.certified ? '<div class="certified_badge"><img class="certified_img" src="'+parameters.plugin_url+'/assets/images/certified.png" alt=""><span><strong> CERTIFIED KGM DEALER </strong></span></div>' : '';
+
+                                $('#fll_dealer_list').append('<div data-lon="'+locator.lon+'" data-lat="'+locator.lat+'" class="dealer-list-item"><p><strong>'+ locator.name +'</strong></p>' +
+                                    '<p><strong>'+ locator.address +'</strong></p>' +
+                                    '<p><strong>' + locator.city + ', ' + locator.state + ' ' + locator.zip + '</strong></p><br>' +
+                                    '<p><strong>'+locator.phone+'</strong></p>' +
+                                    '<p><strong>DISTANCE: '+ locator.distance +'MI</strong></p>' +
+                                    ''+certified_markup+'<div class="right-info"><input data-dealer="'+window.btoa(JSON.stringify(locator))+'" type="radio" name="dealer_selection" required class="continue btn-step radio-dealer btn-dealer-'+locator.id+'" id="btn-dealer-'+locator.id+'"><label class="continue-label" for="btn-dealer-'+locator.id+'">Continue</label></div></div>');
+
                             }
-
-                            var certified_markup = locator.certified ? '<div class="certified_badge"><img class="certified_img" src="'+parameters.plugin_url+'/assets/images/certified.png" alt=""><span><strong> CERTIFIED KGM DEALER </strong></span></div>' : '';
-
-                            $('#fll_dealer_list').append('<div data-lon="'+locator.lon+'" data-lat="'+locator.lat+'" class="dealer-list-item"><p><strong>'+ locator.name +'</strong></p>' +
-                                '<p><strong>'+ locator.address +'</strong></p>' +
-                                '<p><strong>' + locator.city + ', ' + locator.state + ' ' + locator.zip + '</strong></p><br>' +
-                                '<p><strong>'+locator.phone+'</strong></p>' +
-                                '<p><strong>DISTANCE: '+ locator.distance +'MI</strong></p>' +
-                                ''+certified_markup+'<div class="right-info"><input data-dealer="'+window.btoa(JSON.stringify(locator))+'" type="radio" name="dealer_selection" required class="continue btn-step radio-dealer btn-dealer-'+locator.id+'" id="btn-dealer-'+locator.id+'"><label class="continue-label" for="btn-dealer-'+locator.id+'">Continue</label></div></div>');
-                        });
+                            count++;
+                          });
                     }
-
 
                 },
                 error : function(jqXHR, exception){
