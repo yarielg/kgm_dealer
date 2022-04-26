@@ -34,7 +34,7 @@ class Ajax{
             'meta_key'			=> 'certified_kgm_dealer',
             'orderby'			=> 'meta_value',
             'order'				=> 'DESC',
-	        'numberposts' => -1
+	        'numberposts' => 20
 
         );
 
