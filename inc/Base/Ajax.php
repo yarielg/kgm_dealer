@@ -36,7 +36,10 @@ class Ajax{
             'order'				=> 'DESC'
         );
 
+
+
         $locators = get_posts( $args );
+        
         $ffl_locators = array();
         foreach ($locators as $locator){
             array_push($ffl_locators, array(

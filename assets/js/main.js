@@ -99,6 +99,16 @@
                             });
                         }
 
+                        for(var i = 0; i < ffl_locators.length; i++ ){
+                            for(var j = 0; j < ffl_locators.length - 1; j++ ){
+                                if(ffl_locators[j].distance > ffl_locators[j+1].distance){
+                                    var temp = ffl_locators[j];
+                                    ffl_locators[j] = ffl_locators[j+1];
+                                    ffl_locators[j+1] = temp;
+                                }
+                            }
+                        }
+
                         ffl_locators.forEach((locator) => {
 
                             var latitude = parseFloat(locator.lat);
