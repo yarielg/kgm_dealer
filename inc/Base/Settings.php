@@ -39,6 +39,11 @@ class Settings{
          */
         add_action( 'woocommerce_before_order_notes', array($this,'add_div_after_checkout_shipping_field'),100 );
 
+	    /**
+	     * Add logo and go back on thankyou page
+	     */
+        add_action( 'woocommerce_before_thankyou', array($this,'add_go_back_on_thankyou'),100 );
+
         /**
          * Change text withing app
          */
@@ -48,6 +53,17 @@ class Settings{
          * Plugin Settings ACF
          */
         $this->plugin_settings();
+    }
+
+    function add_go_back_on_thankyou(){
+        ?>
+        <p class="text-center mb-3 pb-3">
+            <a href="/">
+                <img src="<?php echo KGM_PLUGIN_URL . '/assets/images/logo.png'?>" alt=""><br>
+                <span>Go back</span>
+            </a>
+        </p>
+        <?php
     }
 
     function plugin_settings(){
