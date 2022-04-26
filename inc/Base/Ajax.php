@@ -33,13 +33,13 @@ class Ajax{
             'post_status'    => 'publish',
             'meta_key'			=> 'certified_kgm_dealer',
             'orderby'			=> 'meta_value',
-            'order'				=> 'DESC'
+            'order'				=> 'DESC',
+	        'numberposts' => -1
+
         );
 
-
-
         $locators = get_posts( $args );
-        
+
         $ffl_locators = array();
         foreach ($locators as $locator){
             array_push($ffl_locators, array(
