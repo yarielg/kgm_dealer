@@ -125,7 +125,7 @@
                                         '</div>' +
                                         '<div class="map-card-text-wrap">' +
                                         '<h4 class="dark-blue-text no-margin"><strong>'+locator.name+'</strong></h4>' +
-                                        '<p>Distance: <strong>'+Math.round(distance)+'</strong> miles</p>' +
+                                        '<p>Distance: <strong>'+Math.round(locator.distance)+'</strong> miles</p>' +
                                         '<p>'+locator.address+' ' + locator.city + ', '+locator.state+'</p>' +
                                         '<p><a href="tel:'+locator.phone+'">'+locator.phone+'</a> <a href="https://www.google.com/maps/search/?api=1&query='+ locator.address + '+' + locator.zip +'" target="_blank">Directions</a></p>' +
                                         '<p><label  for="btn-dealer-'+locator.id+'">SELECT DEALER</label></p>'+
@@ -141,7 +141,7 @@
                                             origin: new google.maps.Point(0, 0),
                                             anchor: new google.maps.Point(14.5, 38)
                                         },
-                                        title: 'asdasdasd'
+                                        title: locator.name
                                     });
 
                                     google.maps.event.addListener(marker, 'click', (function(marker, x) {
