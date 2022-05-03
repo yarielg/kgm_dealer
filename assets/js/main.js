@@ -111,7 +111,7 @@
                             }
                         }
 
-                        var stop = zipcode.length == 0 ? 10000000 :  5 ;
+                        var stop = zipcode.length == 0 && window.use_current_position != 1 ? 10000000 :  5 ;
                         var count = 0;
 
                         ffl_locators.forEach((locator) => {
@@ -195,10 +195,13 @@
             });
         },
         getLocation(){
+            $('#enter_zipcode').val("");
+            window.use_current_position = 1;
             var self = this;
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(self.showPosition);
             }
+
         },
         showPosition(position) {
             window.ffl_lat = position.coords.latitude;
@@ -227,6 +230,7 @@
         getLocationZipCode(){
             var self = this;
             var zipcode = $('#enter_zipcode').val();
+            window.use_current_position = 0;
             if(zipcode && zipcode.toString().length === 5){
                 var geocoder = new google.maps.Geocoder();
                 var address = zipcode;
