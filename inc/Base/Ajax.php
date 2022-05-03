@@ -31,9 +31,9 @@ class Ajax{
         $args = array(
             'post_type' => 'wpsl_stores',
             'post_status'    => 'publish',
-            'meta_key'			=> 'certified_kgm_dealer',
-            'orderby'			=> 'meta_value',
-            'order'				=> 'DESC',
+            /*'meta_key'			=> 'certified_kgm_dealer',
+            'orderby'			=> 'meta_value',*/
+            'order'				=> 'rand',
 	        'numberposts' => -1
 
         );

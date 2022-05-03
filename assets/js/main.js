@@ -70,6 +70,8 @@
                         //Empty the desaler list before being populated
                         $('#fll_dealer_list').empty();
 
+                        var zipcode = $('#enter_zipcode').val();
+
                         locators = response.locators;
 
                         var ffl_locators = [];
@@ -109,7 +111,7 @@
                             }
                         }
 
-                        var stop = 5;
+                        var stop = zipcode.length == 0 ? 10000000 :  5 ;
                         var count = 0;
 
                         ffl_locators.forEach((locator) => {
