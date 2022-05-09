@@ -36,6 +36,8 @@
                 }
             });
 
+
+
             self.loadMarkersAjax(self.map);
         },
         loadMarkersAjax(map) {

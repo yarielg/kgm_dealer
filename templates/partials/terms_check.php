@@ -3,7 +3,7 @@
 <p>
 </p>
 <input class="mandatory_check" required type="checkbox" name="two_check" id="two_check">
-<label for="two_check">I understand I must got to my selected dearer for pickup</label>
+<label for="two_check">I understand I must go to to my selected dearer for pickup</label>
 <p>
 </p>
 <input class="mandatory_check" required type="checkbox" name="three_check" id="three_check">
