@@ -114,11 +114,10 @@
                                 }
                             }
                         }
-                        
+
 
                         var zipcode = $('#enter_zipcode').val();
-                        /*&& window.use_current_position != 1 */
-                        var stop = zipcode.length == 0 ? 100000 :  5 ;
+                        var stop = zipcode.length == 0 && window.use_current_position != 1  ? 100000 :  5 ;
 
                         for(var i = 0; i < stop; i++){
                             var locator = ffl_locators[i];
